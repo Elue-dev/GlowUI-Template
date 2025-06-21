@@ -1,4 +1,3 @@
-import React from "react";
 import Accordion from "../components/ui/custom/accordion";
 import ScreenWrapper from "../components/ui/custom/screen-wrapper";
 import { FAQs } from "../data";
