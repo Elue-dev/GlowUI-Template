@@ -19,6 +19,10 @@ export default function Index() {
       title: "Button",
       link: "button",
     },
+    {
+      title: "Dropdown",
+      link: "dropdown",
+    },
   ];
   return (
     <ScreenWrapper>
