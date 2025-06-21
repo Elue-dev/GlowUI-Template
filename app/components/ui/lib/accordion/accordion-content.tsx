@@ -38,7 +38,7 @@ export const AccordionContent = ({
   useEffect(() => {
     if (measured) {
       animatedHeight.value = withTiming(isActive ? contentHeight : 0, {
-        duration: 500,
+        duration: 200,
         easing: Easing.out(Easing.cubic),
       });
 
@@ -47,16 +47,16 @@ export const AccordionContent = ({
           easing: Easing.linear,
         });
         textOpacity.value = withDelay(
-          400,
-          withTiming(1, { duration: 1000, easing: Easing.inOut(Easing.ease) })
+          200,
+          withTiming(1, { duration: 500, easing: Easing.inOut(Easing.ease) })
         );
         textTranslateY.value = withDelay(
-          300,
-          withTiming(0, { duration: 250, easing: Easing.out(Easing.quad) })
+          100,
+          withTiming(0, { duration: 150, easing: Easing.out(Easing.quad) })
         );
       } else {
-        textOpacity.value = withTiming(0, { duration: 150 });
-        textTranslateY.value = withTiming(10, { duration: 150 });
+        textOpacity.value = withTiming(0, { duration: 100 });
+        textTranslateY.value = withTiming(10, { duration: 100 });
         marginBottom.value = withTiming(0, {
           easing: Easing.linear,
         });
