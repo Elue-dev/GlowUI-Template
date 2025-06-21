@@ -15,6 +15,10 @@ export default function Index() {
       title: "Avatar",
       link: "avatar",
     },
+    {
+      title: "Button",
+      link: "button",
+    },
   ];
   return (
     <ScreenWrapper>
