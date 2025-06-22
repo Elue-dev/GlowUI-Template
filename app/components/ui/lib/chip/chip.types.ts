@@ -1,10 +1,10 @@
-import type { SFSymbol } from "expo-symbols";
+import { Feather } from "@expo/vector-icons";
 import type { StyleProp, ViewStyle } from "react-native";
 
 export interface ChipItem {
   label: string;
-  icon: SFSymbol;
-  activeIcon?: SFSymbol;
+  icon: keyof typeof Feather.glyphMap;
+  activeIcon?: keyof typeof Feather.glyphMap;
   activeColor?: string;
   activeTextColor?: string;
 }
