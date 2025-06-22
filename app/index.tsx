@@ -23,10 +23,18 @@ export default function Index() {
       title: "Dropdown",
       link: "dropdown",
     },
+    {
+      title: "Checkbox",
+      link: "checkbox",
+    },
+    {
+      title: "Chip",
+      link: "chip",
+    },
   ];
   return (
     <ScreenWrapper>
-      <HeadingText text="Glow UI Components" />
+      <HeadingText text="Glow UI Components" styles={{ marginTop: 10 }} />
       <View style={{ marginTop: 20 }}>
         <FlatList
           data={routes}
