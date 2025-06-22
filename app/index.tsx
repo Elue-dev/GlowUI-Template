@@ -43,6 +43,10 @@ export default function Index() {
       title: "Segmented Control",
       link: "segmented-control",
     },
+    {
+      title: "Toast",
+      link: "toast",
+    },
   ];
   return (
     <ScreenWrapper>
