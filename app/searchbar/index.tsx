@@ -46,33 +46,8 @@ const styles = StyleSheet.create({
     paddingVertical: 32,
     gap: 32,
   },
-  header: {
-    gap: 8,
-    alignItems: "flex-start",
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "600",
-    color: "#fafafa",
-    letterSpacing: -0.5,
-  },
-  description: {
-    fontSize: 16,
-    color: "#a1a1aa",
-    lineHeight: 24,
-  },
   section: {
     gap: 16,
-  },
-  sectionHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: "500",
-    color: "#fafafa",
   },
   example: {
     padding: 20,
@@ -83,25 +58,6 @@ const styles = StyleSheet.create({
   },
   exampleGroup: {
     gap: 16,
-  },
-  usage: {
-    padding: 20,
-    backgroundColor: "#18181b",
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: "#27272a",
-    gap: 8,
-  },
-  usageTitle: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: "#fafafa",
-  },
-  usageText: {
-    fontSize: 14,
-    color: "#a1a1aa",
-    lineHeight: 20,
-    paddingLeft: 26,
   },
 });
 

@@ -39,6 +39,10 @@ export default function Index() {
       title: "Searchbar",
       link: "searchbar",
     },
+    {
+      title: "Segmented Control",
+      link: "segmented-control",
+    },
   ];
   return (
     <ScreenWrapper>
