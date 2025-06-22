@@ -31,6 +31,14 @@ export default function Index() {
       title: "Chip",
       link: "chip",
     },
+    {
+      title: "Dialog (Incomplete)",
+      link: "dialog",
+    },
+    {
+      title: "Searchbar",
+      link: "searchbar",
+    },
   ];
   return (
     <ScreenWrapper>

@@ -4,19 +4,20 @@ import { ExpandableButton } from "../lib/button/button";
 
 interface ButtonProps {
   title?: string;
-  isLoading: boolean;
+  isLoading?: boolean;
   backgroundColor?: string;
-  onPress: VoidFunction;
+  onPress?: VoidFunction;
   gradientColors?: string[];
   height?: number;
   icon?: keyof typeof Feather.glyphMap;
   disabled?: boolean;
   noAmination?: boolean;
+  btnWidth?: number;
 }
 
 export default function Button({
   title = "Proceed",
-  isLoading,
+  isLoading = false,
   backgroundColor = "#6366f1",
   onPress,
   gradientColors,
@@ -24,6 +25,7 @@ export default function Button({
   icon,
   disabled = false,
   noAmination = false,
+  btnWidth,
 }: ButtonProps) {
   const width = useWindowDimensions().width;
 
@@ -31,8 +33,8 @@ export default function Button({
     <ExpandableButton
       title={title}
       isLoading={isLoading}
-      onPress={onPress}
-      width={width - 30}
+      onPress={onPress ? onPress : () => {}}
+      width={btnWidth ? btnWidth : width - 30}
       backgroundColor={backgroundColor}
       height={height}
       {...(gradientColors && { gradientColors })}
@@ -41,7 +43,7 @@ export default function Button({
       icon={icon}
       iconSize={20}
       iconColor="#ffffff"
-      borderRadius={28}
+      borderRadius={10}
       withPressAnimation={true}
       noAmimation={noAmination}
       loadingIndicatorColor="#ffffff"

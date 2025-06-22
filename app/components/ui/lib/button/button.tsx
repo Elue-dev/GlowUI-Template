@@ -135,7 +135,7 @@ export const ExpandableButton: React.FC<ExpandableButtonProps> = ({
         {
           height,
           backgroundColor: backgroundColor,
-          borderRadius: 50,
+          borderRadius: 20,
         },
         style,
       ]}
