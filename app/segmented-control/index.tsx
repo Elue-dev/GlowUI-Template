@@ -31,7 +31,7 @@ const SegmentedControlDemo: React.FC = (): React.ReactNode => {
 
   return (
     <ScreenWrapper>
-      <View className="mb-8 ml-5">
+      <View className="mb-8">
         <UISegmentedControl
           items={segmentedControlItems}
           selectedValue={selectedValue}

@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, View } from "react-native";
 import { Accordion as UIAccordion } from "../lib/accordion/accordion";
 import { AccordionContent } from "../lib/accordion/accordion-content";
@@ -13,13 +12,13 @@ interface AccordionProps {
 export default function Accordion({ title, description }: AccordionProps) {
   return (
     <UIAccordion className="space-y-1">
-      <AccordionItem className="border border-gray-800 rounded-lg overflow-hidden">
+      <AccordionItem className="border border-gray-800 rounded-lg overflow-hidden bg-[#1a1a1a] mb-2">
         <AccordionTrigger className="px-6 py-4 hover:bg-gray-900/50">
           <Text className="text-white text-[16px] font-medium">{title}</Text>
         </AccordionTrigger>
         <AccordionContent className="px-6 py-4 bg-gray-900/30 border-t border-gray-800">
           <View className="ml-3">
-            <Text className="text-gray-300 text-md leading-6">
+            <Text className="text-gray-300 text-md leading-6 max-w-[98%] mt-3">
               {description}
             </Text>
           </View>

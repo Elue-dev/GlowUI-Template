@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import ScreenWrapper from "../components/ui/custom/screen-wrapper";
 import {
   showCustomToast,
@@ -33,6 +34,8 @@ function HookExampleScreen() {
 }
 
 function ToastScreen() {
+  const router = useRouter();
+
   return (
     <ScreenWrapper>
       <View style={styles.section}>
@@ -62,7 +65,7 @@ function ToastScreen() {
                 type: "error",
                 description: "Failed to save changes. Please try again",
                 actionLabel: "Retry",
-                onPress: () => alert("Retried!"),
+                onPress: () => router.push("/"),
               })
             }
           >

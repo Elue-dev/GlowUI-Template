@@ -15,7 +15,7 @@ export const AccordionItem = ({
   return (
     <>
       <View
-        className={"p-3" + className}
+        className={"p-3 pb-2" + className}
         onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
       >
         {React.Children.map(children, (child) => {
@@ -24,14 +24,14 @@ export const AccordionItem = ({
             onToggle,
           });
         })}
-        <View
+        {/* <View
           style={[
             styles.accordionDivider,
             {
               width: width - 40,
             },
           ]}
-        />
+        /> */}
       </View>
     </>
   );
@@ -40,7 +40,7 @@ export const AccordionItem = ({
 const styles = StyleSheet.create({
   accordionDivider: {
     height: 1,
-    backgroundColor: "#404040",
+    backgroundColor: "#222",
     left: 10,
     width: 100,
     opacity: 0.54,

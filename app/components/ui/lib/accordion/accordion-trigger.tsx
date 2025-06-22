@@ -53,8 +53,8 @@ export const AccordionTrigger = ({
 
 const styles = StyleSheet.create({
   trigger: {
-    padding: 10,
-    backgroundColor: "#000",
+    padding: 12,
+    backgroundColor: "#1a1a1a",
   },
   triggerContent: {
     flexDirection: "row",

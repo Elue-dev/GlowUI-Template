@@ -16,7 +16,7 @@ interface BaseToastProps {
 export function showToast({
   type,
   description,
-  duration = 4000,
+  duration = 5000,
   actionLabel,
   position = "top",
   onPress,
@@ -37,7 +37,7 @@ export function showCustomToast({
   title,
   description,
   variant = "default",
-  duration = 4000,
+  duration = 5000,
   position = "top",
   actionLabel,
   onPress,
@@ -98,12 +98,14 @@ function CustomToastComponent({
           style={{ marginRight: 6 }}
         />
         {title && (
-          <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "600" }}>
+          <Text
+            style={{ color: colors[variant], fontSize: 16, fontWeight: "600" }}
+          >
             {title}
           </Text>
         )}
       </View>
-      <Text style={{ color: "#D1D5DB", fontSize: 14, lineHeight: 20 }}>
+      <Text style={{ color: colors[variant], fontSize: 14, lineHeight: 20 }}>
         {description}
       </Text>
     </View>
