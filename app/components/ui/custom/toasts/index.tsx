@@ -52,6 +52,7 @@ export function showCustomToast({
       type,
       duration,
       position,
+      hideIcon: true,
       action: {
         label: actionLabel ? actionLabel : "Dismiss",
         onPress: onPress ? onPress : () => Toast.dismiss,
@@ -77,6 +78,14 @@ function CustomToastComponent({
     warning: "warning",
   };
 
+  const colors: Record<ToastType, string> = {
+    success: "#59f3a6",
+    info: "#5896f3",
+    default: "#262626",
+    error: "#ff9ea1",
+    warning: "#f3cf58",
+  };
+
   return (
     <View style={{ padding: 12 }}>
       <View
@@ -85,7 +94,7 @@ function CustomToastComponent({
         <MaterialIcons
           name={icons[variant]}
           size={20}
-          color="#10B981"
+          color={colors[variant]}
           style={{ marginRight: 6 }}
         />
         {title && (
@@ -101,7 +110,7 @@ function CustomToastComponent({
   );
 }
 
-export function LoadingToast({
+export function LoadingToastComponent({
   title = "Processing",
   description = "Please wait while we process your request...",
 }: {
@@ -120,7 +129,7 @@ export function LoadingToast({
 }
 
 export function showLoadingToast() {
-  const id = Toast.show(<LoadingToast />, {
+  const id = Toast.show(<LoadingToastComponent />, {
     duration: 0,
     action: {
       label: "Cancel",

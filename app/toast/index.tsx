@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -27,9 +26,7 @@ function HookExampleScreen() {
 
   const showProgressToast = async () => {
     const id = showLoadingToast();
-
     await new Promise((resolve) => setTimeout(resolve, 3000));
-
     toast.dismiss(id);
     showToast({
       type: "success",
@@ -162,7 +159,7 @@ function ToastDemoContent() {
             style={styles.button}
             onPress={() =>
               showCustomToast({
-                type: "default",
+                type: "success",
                 variant: "success",
                 title: "Success",
                 description: "Your operation was successful! Congratulations!",
@@ -170,7 +167,53 @@ function ToastDemoContent() {
             }
           >
             <Feather name="code" size={16} color="#8B5CF6" />
-            <Text style={styles.buttonText}>Custom Component</Text>
+            <Text style={styles.buttonText}>Custom Component (Success)</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              showCustomToast({
+                type: "error",
+                variant: "error",
+                title: "An Error Occured",
+                description:
+                  "Your operation was unsuccessful! Please try again!",
+              })
+            }
+          >
+            <Feather name="code" size={16} color="#8B5CF6" />
+            <Text style={styles.buttonText}>Custom Component (Error)</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              showCustomToast({
+                type: "info",
+                variant: "info",
+                title: "Not Allowed",
+                description: "This feature is only available for pro users",
+              })
+            }
+          >
+            <Feather name="code" size={16} color="#8B5CF6" />
+            <Text style={styles.buttonText}>Custom Component (Info)</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() =>
+              showCustomToast({
+                type: "warning",
+                variant: "warning",
+                title: "Are you sure?",
+                description: "Are you sure you want to perform this operation",
+              })
+            }
+          >
+            <Feather name="code" size={16} color="#8B5CF6" />
+            <Text style={styles.buttonText}>Custom Component (Warning)</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button} onPress={showTopToast}>

@@ -9,6 +9,7 @@ export interface ToastOptions {
   duration?: number;
   type?: ToastType;
   position?: ToastPosition;
+  hideIcon?: boolean;
   onClose?: () => void;
   action?: {
     label?: string;

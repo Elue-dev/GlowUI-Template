@@ -1,5 +1,5 @@
 import { useToast } from "@/app/context/toast-context";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import {
   LayoutAnimation,
   Platform,
@@ -81,9 +81,6 @@ const getIconForType = (type: ToastVariant) => {
 };
 
 export const Toast: React.FC<ToastProps> = ({ toast, index }) => {
-  const prevContentRef = useRef<string | React.ReactNode | null>(null);
-  const prevTypeRef = useRef<ToastVariant | null>(null);
-
   const { dismiss } = useToast();
   const opacity = useSharedValue(0);
   const translateY = useSharedValue(
@@ -91,8 +88,6 @@ export const Toast: React.FC<ToastProps> = ({ toast, index }) => {
   );
   const scale = useSharedValue(0.95);
   const rotateZ = useSharedValue(toast.options.position === "top" ? -2 : 2);
-  const height = useSharedValue(0);
-  const viewRef = useRef<View>(null);
 
   const getStackOffset = () => {
     const baseOffset = 8;
@@ -228,6 +223,7 @@ export const Toast: React.FC<ToastProps> = ({ toast, index }) => {
   const backgroundColor = getBackgroundColor(toast.options.type);
   const textColor = getTextColor(toast.options.type);
   const icon = getIconForType(toast.options.type);
+  const hideIcon = toast.options.hideIcon;
 
   return (
     <Animated.View
@@ -245,7 +241,7 @@ export const Toast: React.FC<ToastProps> = ({ toast, index }) => {
         onPress={handlePress}
         android_ripple={{ color: "rgba(255, 255, 255, 0.1)" }}
       >
-        {icon ? (
+        {icon && !hideIcon ? (
           <Text style={[styles.icon, { color: textColor }]}>{icon}</Text>
         ) : null}
         <View style={styles.contentContainer}>
