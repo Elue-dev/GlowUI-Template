@@ -1,24 +1,14 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import {
-  AntDesign,
-  Feather,
-  Ionicons,
-  MaterialIcons,
-} from "@expo/vector-icons";
+import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
+import ScreenWrapper from "../components/ui/custom/screen-wrapper";
 import {
   showCustomToast,
   showLoadingToast,
   showToast,
 } from "../components/ui/custom/toasts";
-import { Toast, ToastProviderWithViewport } from "../components/ui/lib/toast";
+import { ToastProviderWithViewport } from "../components/ui/lib/toast";
 import { useToast } from "../context/toast-context";
 
 function HookExampleScreen() {
@@ -42,33 +32,9 @@ function HookExampleScreen() {
   );
 }
 
-function ToastDemoContent() {
-  const showTopToast = () => {
-    Toast.show("This toast appears from the top!", {
-      position: "top",
-      duration: 3000,
-    });
-  };
-
-  const showPersistentToast = () => {
-    Toast.show("This toast stays until dismissed.", {
-      duration: 0,
-      action: {
-        label: "Dismiss",
-        onPress: () => console.log("Dismissed"),
-      },
-    });
-  };
-
+function ToastScreen() {
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Toast Notifications</Text>
-        <Text style={styles.subtitle}>
-          Beautifully designed toast components for React Native
-        </Text>
-      </View>
-
+    <ScreenWrapper>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Basic Types</Text>
         <Text style={styles.sectionDescription}>
@@ -76,20 +42,6 @@ function ToastDemoContent() {
         </Text>
 
         <View style={styles.grid}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() =>
-              showToast({
-                type: "default",
-                description: "This is a default notification message.",
-                position: "top",
-              })
-            }
-          >
-            <Feather name="message-circle" size={16} color="#E5E7EB" />
-            <Text style={styles.buttonText}>Default</Text>
-          </TouchableOpacity>
-
           <TouchableOpacity
             style={styles.button}
             onPress={() =>
@@ -215,16 +167,6 @@ function ToastDemoContent() {
             <Feather name="code" size={16} color="#8B5CF6" />
             <Text style={styles.buttonText}>Custom Component (Warning)</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button} onPress={showTopToast}>
-            <Feather name="arrow-up" size={16} color="#06B6D4" />
-            <Text style={styles.buttonText}>Top Position</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button} onPress={showPersistentToast}>
-            <Ionicons name="infinite" size={16} color="#EC4899" />
-            <Text style={styles.buttonText}>Persistent</Text>
-          </TouchableOpacity>
         </View>
       </View>
 
@@ -236,13 +178,7 @@ function ToastDemoContent() {
 
         <HookExampleScreen />
       </View>
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          Tap any toast notification to dismiss it early
-        </Text>
-      </View>
-    </ScrollView>
+    </ScreenWrapper>
   );
 }
 
@@ -250,7 +186,7 @@ export default function ToastDemo() {
   return (
     <SafeAreaProvider>
       <ToastProviderWithViewport>
-        <ToastDemoContent />
+        <ToastScreen />
       </ToastProviderWithViewport>
     </SafeAreaProvider>
   );
@@ -259,7 +195,7 @@ export default function ToastDemo() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0A0A0B",
+    backgroundColor: "#111",
     paddingHorizontal: 20,
   },
   header: {
@@ -301,9 +237,9 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#111827",
+    backgroundColor: "#1a1a1a",
     borderWidth: 1,
-    borderColor: "#1F2937",
+    borderColor: "#1a1a1a",
     borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 12,

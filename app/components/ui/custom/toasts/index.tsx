@@ -18,7 +18,7 @@ export function showToast({
   description,
   duration = 4000,
   actionLabel,
-  position = "bottom",
+  position = "top",
   onPress,
 }: BaseToastProps) {
   Toast.show(description, {
@@ -38,7 +38,7 @@ export function showCustomToast({
   description,
   variant = "default",
   duration = 4000,
-  position = "bottom",
+  position = "top",
   actionLabel,
   onPress,
 }: BaseToastProps) {
@@ -131,6 +131,7 @@ export function LoadingToastComponent({
 export function showLoadingToast() {
   const id = Toast.show(<LoadingToastComponent />, {
     duration: 0,
+    position: "top",
     action: {
       label: "Cancel",
       onPress: () => {

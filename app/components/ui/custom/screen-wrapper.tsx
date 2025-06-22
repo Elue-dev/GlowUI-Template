@@ -7,7 +7,8 @@ export default function ScreenWrapper({ children }: { children: ReactNode }) {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          marginHorizontal: 15,
+          marginHorizontal: 20,
+          marginTop: 30,
         }}
       >
         {children}
